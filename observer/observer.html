@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Observer Pattern</title>
+  <style>
+    .intro {
+      width: 700px;
+      margin: 0px auto;
+      border: 1px solid gray;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="intro">
+    <h1>Observer Pattern</h1>
+    <p> This patter give us a way to control the behavior of an object depending of an event</p>
+    <img src="Observer.png" alt="Observer UML schemma">
+    <p>The Observer Pattern is based on a Subject class with an attribute (notify) and two methods (subscribe and unsubscribe) that will attend the events (or stop doing it) that are triggered from other objects. These objects can shoot different states or functions in the subject, which will be notified when shooted.</p>
+    <p>The aim of this pattern is to be able to update the state of the subject in as many ways as needed from different events while it is subscribed</p>
+  </div>
+
+  <br>
+
+  <div class="intro">
+    <p>Type some text</p>
+    <input type="text" id="myText" oninput="change()">
+    <div id="div1"></div>
+    <div id="div2"></div>
+  </div>
+
+  <br />
+
+  <div class="intro">
+    <p><a href="items.html">Additional Example</a></p>
+  </div>
+  <script src="observerPatter.js"></script>
+</body>
+</html>
