@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Decorator Pattern</title>
+  <style>
+    .intro {
+      width: 900px;
+      margin: 0px auto;
+      border: 1px solid gray;
+      padding: 10px;
+    }
+    .intro img {
+      width: 880px;
+    }
+  </style>
+</head>
+<body>
+  <div class="intro">
+    <h1>Decorator Pattern</h1>
+    <p>This structural pattern offeras a simple way to design class strcutures that requires high flexibility and a complex hierarchy of subclasses </p>
+    <p>This pattern allows behavior to be added to an individual object, dynamically, without affecting the behavior of other objects from the same class.</p>
+    <p>The decorator pattern is often useful for adhering to the Single Responsibility Principle, as it allows functionality to be divided between classes with unique areas of concern as well as to the Open-Closed Principle, by allowing the functionality of a class to be extended without being modified.</p>
+    <p>Decorators are an alternative to using subclasses, especially when responsibilities should be added to (and removed from) an object dynamically at run-time. When using subclassing, different subclasses extend a class in different ways. But an extension is bound to the class at compile-time and can't be changed at run-time</p>
+    <img src="Decorator.png" alt="Decorator UML schemma">
+    <p>Open the console --></p>
+  </div>
+
+  <script src="decoratorPattern.js"></script>
+</body>
+</html>
