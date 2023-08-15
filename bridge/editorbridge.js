@@ -5,7 +5,7 @@ class Editor {
   }
 
   print(width, height, color) {
-    // This is the bridge method abstracts each implementation
+    // This is the bridge method abstracts the the use of each implementation
     this.implementator.setWidth(width);
     this.implementator.setHeigth(height);
     this.implementator.setColor(color);
@@ -36,10 +36,27 @@ class HTMLPainter {
 
   print() {
     this.container.innerHTML = `<div
-      style="width:${this.width}; height:${this.height}
-      background:${this.color}
+      style="width:${this.width}; height:${this.heigth};
+      background:${this.color};"
       >
       </div>
     `;
   }
 }
+
+// Main code
+const editor = new Editor(new HTMLPainter(content));
+
+colorRange.addEventListener('input', (e) => {
+  const width = e.target.value;
+  const height = e.target.value;
+  const color = colorEditor.value;
+  editor.print(width, height, color);
+});
+
+colorEditor.addEventListener('input', (e) => {
+  const width = colorRange.value;
+  const height = colorRange.value;
+  const color = e.target.value;
+  editor.print(width, height, color);
+});
