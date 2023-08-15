@@ -14,7 +14,7 @@ class Editor {
 }
 
 class HTMLPainter {
-  // Implementator class
+  // Implementator class to edit elements based in html tags
   constructor(container) {
     this.container = container;
     this.width = '1px';
@@ -44,8 +44,45 @@ class HTMLPainter {
   }
 }
 
+class CanvasPainter {
+  // Implementator class to edit canvas elements
+  constructor(canvas) {
+    this.canvas = canvas;
+    this.ctx = this.canvas.getContext('2d');
+
+    this.width = 1;
+    this.heigth = 1;
+    this.color = '#000000';
+  }
+
+  setWidth(width) {
+    this.width = width;
+  }
+
+  setHeigth(heigth) {
+    this.heigth = heigth;
+  }
+
+  setColor(color) {
+    this.color = color;
+  }
+
+  print() {
+    this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+    this.ctx.fillStyle = this.color;
+    this.ctx.fillRect(0, 0, this.width, this.heigth);
+  }
+}
+
 // Main code
-const editor = new Editor(new HTMLPainter(content));
+let editor = new Editor(new CanvasPainter(canvas)); // Canvas version by default
+
+targetSelector.addEventListener('change', (e) => {
+  console.log(e.target.value);
+  e.target.value === 'canvas'
+    ? (editor = new Editor(new CanvasPainter(canvas))) // canvas version
+    : (editor = new Editor(new HTMLPainter(content))); // HTML tags version
+});
 
 colorRange.addEventListener('input', (e) => {
   const width = e.target.value;
