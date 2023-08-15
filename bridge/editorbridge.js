@@ -78,7 +78,6 @@ class CanvasPainter {
 let editor = new Editor(new CanvasPainter(canvas)); // Canvas version by default
 
 targetSelector.addEventListener('change', (e) => {
-  console.log(e.target.value);
   e.target.value === 'canvas'
     ? (editor = new Editor(new CanvasPainter(canvas))) // canvas version
     : (editor = new Editor(new HTMLPainter(content))); // HTML tags version
