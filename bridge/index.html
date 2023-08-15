@@ -7,13 +7,24 @@
   <title>Document</title>
 </head>
 <body>
+  <label>Apply to: </label>
+  <select id="targetSelector">
+    <option value="canvas">canvas</option>
+    <option value="content">html tag</option>
+  </select>
+
   <div id="control">
     <input type="range" id="colorRange" max="100" min="1" step="1" value="1">
     <input type="color" id="colorEditor">
   </div>
-  
-  <div id="content"></div>
-  <canvas id="canvas" width="500" height="500"></canvas>
+  <div>
+    <h4>HTML element</h4>
+    <div id="content"></div>
+  </div>
+  <div>
+    <h4>Canvas element</h4>
+    <canvas id="canvas" width="500" height="500"></canvas>
+  </div>
 
   <script src="editorbridge.js"></script>
 </body>
